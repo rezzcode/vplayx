@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Play Next Video",
+  "version": "1.0",
+  "description": "Automatically clicks the play button on my favourite video site.",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*"
+      ],
+      "js": ["content.js"],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "rezzcode@vplayx",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  }
+}
